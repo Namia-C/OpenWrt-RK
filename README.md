@@ -55,7 +55,7 @@
 - ![img.png](backups/实例/img.png)
 </details>
 <details>
-<summary><b>&nbsp;X86、photonicatWRT 等固件插件预览</b></summary>
+<summary><b>&nbsp; photonicatWRT 等固件插件预览</b></summary>
 <br/>
 <details>
 <summary><b>├── 状态</b></summary>
