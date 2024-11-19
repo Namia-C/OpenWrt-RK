@@ -201,9 +201,5 @@
 
 
   
-6. 编译大概需要1-3小时，一般两个半小时就编译完成，最后后在仓库主页 [Releases](https://github.com/Namia-R/OpenWrt-X/releases) 对应 Tag 标签内下载固件
+6. 编译大概需要1-3小时，一般两个半小时就编译完成，最后后在仓库主页 [Releases](https://github.com/Namia-R/OpenWrt-RK/releases) 对应 Tag 标签内下载固件
 <details>
-
-<a href="#readme">
-<img src="https://img.shields.io/badge/-返回顶部-FFFFFF.svg" title="返回顶部" align="right"/>
-</a>
