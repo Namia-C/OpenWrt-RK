@@ -52,8 +52,8 @@ clone_url https://github.com/xiaorouji/openwrt-passwall2
 clone_dir https://github.com/vernesong/OpenClash luci-app-openclash
 
 # Themes
-git_clone 18.06 https://github.com/kiddin9/luci-theme-edge
-git_clone 18.06 https://github.com/jerrykuku/luci-theme-argon
+git_clone https://github.com/kiddin9/luci-theme-edge
+git_clone https://github.com/jerrykuku/luci-theme-argon
 git_clone https://github.com/jerrykuku/luci-app-argon-config
 clone_dir https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom luci-theme-infinityfreedom-ng
 clone_dir https://github.com/haiibo/packages luci-theme-opentomcat
