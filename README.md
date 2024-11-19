@@ -20,7 +20,7 @@
 - ### X86_64 [`x86_64💕`](https://github.com/Namia-R/OpenWrt-X) 
 - 项目编译的固件插件为最新版本，最新版插件可能有 BUG，如果之前使用稳定则无需追新
 - 第一次使用请采用全新安装，避免出现升级失败以及其他一些可能的 BUG
-- 支持uefi和传统启动两种模式，可以使用微pe或传统你们知道的刷机方式
+- 支持uefi和传统启动两种模式，可以使用微pe或传统你们知道的刷机方式Rockchip除外！
 - 另外就是网盘的固件可能更新的网站是我原始仓库-X的你们如果刷网盘固件并且要和我后台关联更新的话把Namia-X改成Namia-R
 - 刷机工具 [`百度网盘💕`](https://pan.baidu.com/s/1k14RFEMdHw3W_S7wCnQyDg?pwd=8986) 提取码: 8986 
 - 编译 [`必看项💕`](https://raw.githubusercontent.com/Namia-R/OpenWrt-X/refs/heads/main/backups/%E5%B7%B2%E7%BC%96%E8%AF%91%E8%AF%B4%E6%98%8E/txt) 
@@ -31,20 +31,19 @@
 
 
 ## 固件特色 [![](https://img.shields.io/badge/-本项目固件特色-FFFFFF.svg)](#固件特色-)
-1. 支持在线更新固件
-2. x86集成部分常用有线、无线、3G / 4G 网卡驱动
-3. 光影猫photonicat正在添加有线、无线、3G / 4G /5G 网卡驱动
-4. 集成中文版 netdata 实时监控插件，小白也能轻松看懂系统概况
-5. 集成 iStore 应用商店，可根据自己需求自由安装所需插件
-6. 集成 Docker 服务，可在 OpenWrt 内自由部署 Docker 应用
-7. 集成应用过滤插件，支持游戏、视频、聊天、下载等 APP 过滤
-8. 集成在线用户插件，可查看所有在线用户 IP 地址与实时速率等
+1. 支持在线更新固件Rockchip除外！
+2. 光影猫photonicat添加有线、无线、3G / 4G /5G 网卡驱动和sim卡适配驱动
+3. 集成中文版 netdata 实时监控插件，小白也能轻松看懂系统概况
+4. 集成 iStore 应用商店，可根据自己需求自由安装所需插件
+5. 集成 Docker 服务，可在 OpenWrt 内自由部署 Docker 应用
+6. 集成应用过滤插件，支持游戏、视频、聊天、下载等 APP 过滤
+7. 集成在线用户插件，可查看所有在线用户 IP 地址与实时速率等
 
 ## 固件下载 [![](https://img.shields.io/badge/-编译状态及下载链接-FFFFFF.svg)](#固件下载-)
 点击下表中 [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?style=flat&logo=hack-the-box)](https://github.com/Namia-R/OpenWrt-X/releases) 即可跳转到该设备固件下载页面
 | 平台+设备名称 | 固件编译状态 | 配置文件 | 固件下载 |
-| :-------------: | :-------------: | :-------------: | :-------------: |
-| [![](https://img.shields.io/badge/openwrt-X86_64-32C955.svg?logo=openwrt)](https://github.com/Namia-R/OpenWrt-X/blob/main/.github/workflows/Lede.yml) | [![](https://github.com/Namia-R/OpenWrt-X/actions/workflows/Lede.yml/badge.svg)](https://github.com/Namia-R/OpenWrt-X/actions/workflows/Lede.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/Namia-R/OpenWrt-X/blob/main/build/Lede/seed/x86_64) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/Namia-R/OpenWrt-X/releases/tag/Update-x86) |
+| :-------------: | 
+
 | [![](https://img.shields.io/badge/openwrt-PhotonicatWrt-32C955.svg?logo=openwrt)](https://github.com/Namia-R/OpenWrt-X/blob/main/.github/workflows/Immortalwrt.yml) | [![](https://github.com/Namia-R/OpenWrt-X/actions/workflows/Immortalwrt.yml/badge.svg)](https://github.com/Namia-R/OpenWrt-X/actions/workflows/Immortalwrt.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/Namia-R/OpenWrt-X/blob/main/build/Lede/seed/photonicatWrt) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/Namia-R/OpenWrt-X/releases/tag/Update-rockchip) |
 
 
