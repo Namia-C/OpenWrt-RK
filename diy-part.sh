@@ -64,8 +64,6 @@ git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 git clone --depth=1 https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 git clone --depth=1 https://github.com/morytyann/OpenWrt-mihomo
 
-
-
 # 8----------------------------------------------------------------------------------------------------------------------------------
 # Themes
 git clone --depth=1 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
