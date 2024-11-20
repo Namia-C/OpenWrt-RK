@@ -86,7 +86,10 @@ git clone --depth=1 -b v5-lua https://github.com/sbwml/luci-app-mosdns package/l
 git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # Alist
-git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+git clone --depth=1 -b lua https://github.com/sbwml/luci-app-alist package/luci-app-alist
+
+# Golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 
 # DDNS-GO
 git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
