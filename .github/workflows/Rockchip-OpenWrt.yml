@@ -6,7 +6,9 @@ permissions: write-all
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 18 * * *
+    - cron: 30 14 * * *
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
