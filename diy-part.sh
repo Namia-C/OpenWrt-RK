@@ -85,7 +85,6 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 # 拨号调制器
 git clone --depth=1 https://github.com/ouyangzq/luci-app-cpe package/luci-app-cpe
 git_sparse_clone main https://github.com/kenzok8/jell luci-app-modemband sms-tool modemband
-git_sparse_clone main https://github.com/kenzok8/jell luci-app-usbmodem  quectel_QMI_WWAN
 
 # 13----------------------------------------------------------------------------------------------------------------------------------
 # SmartDNS
