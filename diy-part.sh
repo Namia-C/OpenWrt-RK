@@ -6,6 +6,7 @@ sed -i 's/LEDE/OpenWrt-RK/g' package/base-files/files/bin/config_generate
 # 1----------------------------------------------------------------------------------------------------------------------------------
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.10.1/g' ./package/base-files/luci2/bin/config_generate
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 # 2----------------------------------------------------------------------------------------------------------------------------------
 # 更改默认 Shell 为 zsh
