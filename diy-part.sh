@@ -74,6 +74,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon package/luci-t
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 git clone --depth=1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
 git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat package/luci-theme-kucat
+git clone --depth=1 https://github.com/SAENE/luci-theme-design package/luci-theme-design
 git_sparse_clone main https://github.com/haiibo/packages luci-theme-opentomcat
 
 # 9----------------------------------------------------------------------------------------------------------------------------------
