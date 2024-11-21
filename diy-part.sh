@@ -127,6 +127,8 @@ git_sparse_clone main https://github.com/linkease/istore luci
 # 19----------------------------------------------------------------------------------------------------------------------------------
 #OLED
 git clone --depth=1 https://github.com/natelol/luci-app-oled package/luci-app-oled
+# 网速测试
+git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 
 # 20----------------------------------------------------------------------------------------------------------------------------------
 # 在线用户
