@@ -77,7 +77,6 @@ git clone --depth=1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreed
 git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat package/luci-theme-kucat
 git clone --depth=1 https://github.com/SAENE/luci-theme-design package/luci-theme-design
 git clone --depth=1 https://github.com/kenzok8/luci-theme-ifit package/luci-theme-ifit
-git_sparse_clone main https://github.com/haiibo/packages luci-theme-opentomcat
 
 # 9----------------------------------------------------------------------------------------------------------------------------------
 # 更改 Argon 主题背景
