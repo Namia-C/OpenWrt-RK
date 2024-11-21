@@ -65,7 +65,7 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-a
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 git clone --depth=1 https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
-git clone --depth=1 https://github.com/morytyann/OpenWrt-mihomo
+git clone --depth=1 https://github.com/morytyann/OpenWrt-mihomo luci-appmihomo mihomo
 
 # 8----------------------------------------------------------------------------------------------------------------------------------
 # Themes
