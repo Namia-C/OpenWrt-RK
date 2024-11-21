@@ -43,13 +43,13 @@ function git_sparse_clone() {
 # 6----------------------------------------------------------------------------------------------------------------------------------
 # 添加额外插件
 git clone --depth=1 https://github.com/Namia-R/luci-app-adguardhome package/luci-app-adguardhome
-git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
 git clone --depth=1 https://github.com/ouyangzq/sendat package/sendat
 git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
 # 插件包使用方法
 # git clone --depth=1 https://github.com/haiibo/openwrt-packages package/openwrt-packages
-
+# luci-app-poweroff关机插件
+# git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 
 #git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 #git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
