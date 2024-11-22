@@ -1,8 +1,8 @@
 # 3/4/5G已添加调制器
 # luci-app-pcimodem
 # luci-app-usbmodem
-luci-app-modem
-luci-app-modeminfo
+# luci-app-modem
+luci-app-modemband
 luci-app-cpe
 
 # 
