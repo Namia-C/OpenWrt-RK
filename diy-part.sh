@@ -1,18 +1,18 @@
  #!/bin/bash
+ 
+# 开始DIY✔️----------------------------------------------------------------------------------------------------------------------------------
 
+# 1----------------------------------------------------------------------------------------------------------------------------------
 # 修改主机名字，把 OpenWrt X 修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/LEDE/OpenWrt-RK/g' package/base-files/files/bin/config_generate
 
 # 1----------------------------------------------------------------------------------------------------------------------------------
 # 修改默认IP
-
 # Modify default IP（修改wan口IP）本地编译时在文件的第150行左右
 # sed -i 's/192.168.1.1/192.168.68.1/g' package/base-files/files/bin/config_generate
-
 # 新版LUCI的ip修改地址
-# sed -i 's/192.168.1.1/192.168.68.1/g' package/base-files/luci2/bin/config_generate
-
 sed -i 's/192.168.1.1/192.168.10.1/g' ./package/base-files/luci2/bin/config_generate
+# 新版LUCI无密码登录
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 # 2----------------------------------------------------------------------------------------------------------------------------------
@@ -20,13 +20,12 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 # sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 # 3----------------------------------------------------------------------------------------------------------------------------------
-# 更改 ttyd 顺序和名称
-sed -i '3a \		"order": 10,' feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
+# 更改 ttyd 顺序-名称-无密码登录
+# sed -i '3a \		"order": 10,' feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
 sed -i 's/\"终端\"/\"TTYD 终端\"/g' feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
-# TTYD 免登录
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
-# 4----------------------------------------------------------------------------------------------------------------------------------
+# 5----------------------------------------------------------------------------------------------------------------------------------
 # 移除要替换的包
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/msd_lite
@@ -37,7 +36,7 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
 
-# 5----------------------------------------------------------------------------------------------------------------------------------
+# 6----------------------------------------------------------------------------------------------------------------------------------
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
@@ -48,7 +47,7 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-# 6----------------------------------------------------------------------------------------------------------------------------------
+# 7----------------------------------------------------------------------------------------------------------------------------------
 # 添加额外插件
 git clone --depth=1 https://github.com/Namia-R/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
@@ -65,18 +64,18 @@ git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebro
 #git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
 #git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 
-# 7----------------------------------------------------------------------------------------------------------------------------------
+# 8---------------------------------------------------------------------------------------------------------------------------------
 # 科学上网插件
+git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
+git_sparse_clone main https://github.com/morytyann/OpenWrt-mihomo luci-app-mihomo mihomo
 git clone --depth=1 https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
 git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
-git_sparse_clone main https://github.com/morytyann/OpenWrt-mihomo luci-app-mihomo mihomo
-git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
-# 8----------------------------------------------------------------------------------------------------------------------------------
-# Themes
+# 9----------------------------------------------------------------------------------------------------------------------------------
+# 个性化主题插件
 git clone --depth=1 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
@@ -85,23 +84,21 @@ git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat package/luci-th
 git clone --depth=1 https://github.com/SAENE/luci-theme-design package/luci-theme-design
 git clone --depth=1 https://github.com/kenzok8/luci-theme-ifit package/luci-theme-ifit
 
-# 9----------------------------------------------------------------------------------------------------------------------------------
-# 更改 Argon 主题背景
-cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-
 # 10----------------------------------------------------------------------------------------------------------------------------------
+# 更改 Argon 主题背景或者其他支持更改的
+cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 # 取消主题默认设置
 find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
 
 # 11----------------------------------------------------------------------------------------------------------------------------------
-# 晶晨宝盒
+# 晶晨宝盒-适用于s905或者n1的自动更新查件
 #git_sparse_clone main https://github.com/ophub/luci-app-amlogic luci-app-amlogic
 #sed -i "s|firmware_repo.*|firmware_repo 'https://github.com/haiibo/OpenWrt'|g" package/luci-app-amlogic/root/etc/config/amlogic
 # sed -i "s|kernel_path.*|kernel_path 'https://github.com/ophub/kernel'|g" package/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|ARMv8|ARMv8_PLUS|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # 12----------------------------------------------------------------------------------------------------------------------------------
-# 拨号调制器
+# 随身CPE拨号调制器
 git clone --depth=1 https://github.com/ouyangzq/luci-app-cpe package/luci-app-cpe
 git_sparse_clone main https://github.com/kenzok8/jell luci-app-modemband sms-tool modemband
 
@@ -185,10 +182,12 @@ sed -i 's/TARGET_CFLAGS.*/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE
 #sed -i '/^UBOOT_TARGETS := rk3528-evb rk3588-evb/s/^/#/' package/boot/uboot-rk35xx/Makefile
 sed  -i 's/^UBOOT\_TARGETS\ \:\=\ rk3528\-evb\ rk3588\-evb/#UBOOT\_TARGETS\ \:\=\ rk3528\-evb\ rk3588\-evb/g' package/boot/uboot-rk35xx/Makefile
 
-# 设置wifi加密方式为psk2+ccmp,wifi密码为88888889
+# 29----------------------------------------------------------------------------------------------------------------------------------
+# 设置wifi加密方式为psk2+ccmp,wifi密码为12345678
 sed -i 's/encryption=none/encryption=psk2+ccmp/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wireless.default_radio${devidx}.key=88888889' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wireless.default_radio${devidx}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
+# 30----------------------------------------------------------------------------------------------------------------------------------
 # 设置无线的国家代码为CN,wifi的默认功率为20
 sed -i 's/country=US/country=CN/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/set wireless.radio${devidx}.disabled=0/a\\t\t\tset wireless.radio${devidx}.txpower=20' package/kernel/mac80211/files/lib/wifi/mac80211.sh
