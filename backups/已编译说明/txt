@@ -1,10 +1,9 @@
 # 3/4/5G已添加调制器
-luci-app-pcimodem
-luci-app-usbmodem
+# luci-app-pcimodem
+# luci-app-usbmodem
 luci-app-modem
 luci-app-modeminfo
-luci-app-modeminfo
-luci-app-ap-modem
+luci-app-cpe
 
 # 
 -.-大众常用是18.06lede的所以你直接无脑点击编译就行插件已经基于本人测试完毕直接使用！不想用的直接在seed删除
@@ -22,7 +21,9 @@ X86_64都可以编译成功，固件都带了自动更新功能
 正在测试rk3568光影猫
 现阶段大雕6.6正在测试模块及其驱动，无线等
 3/4/5G模块模块已添加
-我在编译过程中无法更改IP，主题luci-theme-argon，有可能无法使用而导致整个固件无法使用请及时反馈
-
-
+主题已经重新做了适配
+更改ip192.168.10.1
+设置wilf密码12345678
+更改wilf国家代码
+其他测试中
 
