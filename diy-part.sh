@@ -84,7 +84,6 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/l
 git clone --depth=1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
 git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat package/luci-theme-kucat
 git clone --depth=1 https://github.com/SAENE/luci-theme-design package/luci-theme-design
-git clone --depth=1 https://github.com/kenzok8/luci-theme-ifit package/luci-theme-ifit
 
 # 10----------------------------------------------------------------------------------------------------------------------------------
 # 更改 Argon 主题背景或者其他支持更改的主题，详情看images文件里面有啥主题或者你自己找你喜欢的主题背景
