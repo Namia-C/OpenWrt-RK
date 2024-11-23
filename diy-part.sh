@@ -14,8 +14,6 @@ sed -i 's/OpenWrt/OpenWrt-RK/g' package/base-files/files/bin/config_generate
 # sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 # 新版LUCI的ip修改地址
 sed -i 's/192.168.1.1/192.168.10.1/g' ./package/base-files/luci2/bin/config_generate
-# 新版LUCI无密码登录
-sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 # 2----------------------------------------------------------------------------------------------------------------------------------
 # 更改默认 Shell 为 zsh
@@ -52,7 +50,6 @@ function git_sparse_clone() {
 # 添加额外插件
 git clone --depth=1 https://github.com/Namia-R/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
-git clone --depth=1 https://github.com/ouyangzq/sendat package/sendat
 git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
 # 插件包使用方法
 # git clone --depth=1 https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
@@ -77,10 +74,12 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/l
 git clone --depth=1 https://github.com/Namia-R/luci-theme-design package/luci-theme-design
 
 # 10----------------------------------------------------------------------------------------------------------------------------------
-# 更改 Argon 主题背景或者其他支持更改的主题，详情看images文件里面有啥主题或者你自己找你喜欢的主题背景
-cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 # 取消主题默认设置
 find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
+# 更改 Argon 主题背景或者其他支持更改的主题，详情看images文件里面有啥主题或者你自己找你喜欢的主题背景
+cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+# 新版LUCI主题无密码登录
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 # 11----------------------------------------------------------------------------------------------------------------------------------
 # 晶晨宝盒-适用于s905或者n1的自动更新查件
