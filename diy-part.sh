@@ -90,7 +90,8 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 #sed -i "s|ARMv8|ARMv8_PLUS|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 # 12----------------------------------------------------------------------------------------------------------------------------------
-# 随身CPE拨号调制器
+# 随身路由AT工具和拨号调制器
+git clone --depth=1 https://github.com/ouyangzq/sendat package/sendat
 git clone --depth=1 https://github.com/ouyangzq/luci-app-cpe package/luci-app-cpe
 git_sparse_clone main https://github.com/kenzok8/jell luci-app-modemband sms-tool modemband
 
