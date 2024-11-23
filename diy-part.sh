@@ -192,9 +192,9 @@ sed -i 's/country=US/country=CN/g' package/kernel/mac80211/files/lib/wifi/mac802
 sed -i '/set wireless.radio${devidx}.disabled=0/a\\t\t\tset wireless.radio${devidx}.txpower=20' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 31----------------------------------------------------------------------------------------------------------------------------------
-# 设置wan口上网方式为PPPOE，本地编译时在文件的第86行左右
+# 设置wan口上网方式为PPPOE
 # sed -i 's/2:-dhcp/2:-pppoe/g' package/base-files/files/lib/functions/uci-defaults.sh
-# 设置PPPOE上网的账号和密码,本地编译时在文件的第182和183行左右
+# 设置PPPOE上网的账号和密码
 # sed -i 's/username='"'"'username'"'"'/username='"'"'403'"'"'/g; s/password='"'"'password'"'"'/password='"'"'8888'"'"'/g' package/base-files/files/bin/config_generate
 
 # 32----------------------------------------------------------------------------------------------------------------------------------
