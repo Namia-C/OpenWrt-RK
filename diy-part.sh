@@ -33,7 +33,6 @@ rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/msd_lite
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/themes/luci-theme-argon
-# rm -rf feeds/luci/themes/luci-theme-netgear
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
@@ -52,19 +51,13 @@ function git_sparse_clone() {
 # 7----------------------------------------------------------------------------------------------------------------------------------
 # 添加额外插件
 git clone --depth=1 https://github.com/Namia-R/luci-app-adguardhome package/luci-app-adguardhome
-# git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdatagit clone --depth=1 https://github.com/muink/luci-app-netspeedtest package/luci-app-netspeedtest
+git clone --depth=1 https://github.com/muink/luci-app-netspeedtest package/luci-app-netspeedtest
 git clone --depth=1 https://github.com/ouyangzq/sendat package/sendat
 git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
 # 插件包使用方法
 # git clone --depth=1 https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 # luci-app-poweroff关机插件
 # git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
-
-#git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
-#git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
-#git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app-ikoolproxy
-#git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
-#git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 
 # 8---------------------------------------------------------------------------------------------------------------------------------
 # 科学上网插件
