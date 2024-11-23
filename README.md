@@ -9,8 +9,7 @@
 <img src="https://img.shields.io/github/forks/Namia-R/OpenWrt-RK.svg?style=for-the-badge&color=ff69b4"/>
 <img src="https://img.shields.io/github/license/Namia-R/OpenWrt-RK.svg?style=for-the-badge&color=blueviolet"/>
 
-[![](https://img.shields.io/badge/-目录:-696969.svg)](#readme) [![](https://img.shields.io/badge/-项目说明-FFFFFF.svg)](#项目说明-) [![](https://img.shields.io/badge/-固件特色-FFFFFF.svg)](#固件特色-) [![](https://img.shields.io/badge/-固件下载-FFFFFF.svg)](#固件下载-) [![](https://img.shields.io/badge/-近期更新-FFFFFF.svg)](#近期更新-) [![](https://img.shields.io/badge/-插件预览-FFFFFF.svg)](#插件预览-) [![](https://img.shields.io/badge/-定制固件-FFFFFF.svg)](#定制固件-) [![](https://img.shields.io/badge/-特别提示-FFFFFF.svg)](#特别提示-) [![](https://img.shields.io/badge/-鸣谢-FFFFFF.svg)](#鸣谢-)
-</div>
+[![](https://img.shields.io/badge/-目录:-696969.svg)](#readme) [![](https://img.shields.io/badge/-项目说明-FFFFFF.svg)](#项目说明-) [![](https://img.shields.io/badge/-固件特色-FFFFFF.svg)](#固件特色-) [![](https://img.shields.io/badge/-固件下载-FFFFFF.svg)](#固件下载-) [![](https://img.shields.io/badge/-近期更新-FFFFFF.svg)](#近期更新-) [![](https://img.shields.io/badge/-插件预览-FFFFFF.svg)](#插件预览-) 
 
 
 ## 项目说明 [![](https://img.shields.io/badge/-项目基本介绍-FFFFFF.svg)](#项目说明-)
@@ -44,8 +43,5 @@
 | :-------------: | :-------------: | :-------------: | :-------------: |
 | [![](https://img.shields.io/badge/openwrt-Rockchip-32C955.svg?logo=openwrt)](https://github.com/Namia-R/OpenWrt-RK/blob/main/.github/workflows/Rockchip-OpenWrt.yml) | [![](https://github.com/Namia-R/OpenWrt-RK/actions/workflows/Rockchip-OpenWrt.yml/badge.svg)](https://github.com/Namia-R/OpenWrt-RK/actions/workflows/Rockchip-OpenWrt.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/Namia-R/OpenWrt-RK/blob/main/configs/rockchip.config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/Namia-R/OpenWrt-RK/releases) |
 
-
 ### 近期更新 [![](https://img.shields.io/badge/-近期固件更新-FFFFFF.svg)](#近期更新-)
 - 编译 [`必看项💕`](https://raw.githubusercontent.com/Namia-R/OpenWrt-RK/refs/heads/main/backups/%E5%B7%B2%E7%BC%96%E8%AF%91%E8%AF%B4%E6%98%8E/txt) 
-- 编译大概需要1-3小时，一般两个半小时就编译完成，最后后在仓库主页 [Releases](https://github.com/Namia-R/OpenWrt-RK/releases) 对应 Tag 标签内下载固件
-<details>
