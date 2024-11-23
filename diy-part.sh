@@ -175,9 +175,10 @@ sed -i 's/TARGET_CFLAGS.*/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE
 sed  -i 's/^UBOOT\_TARGETS\ \:\=\ rk3528\-evb\ rk3588\-evb/#UBOOT\_TARGETS\ \:\=\ rk3528\-evb\ rk3588\-evb/g' package/boot/uboot-rk35xx/Makefile
 
 # 29----------------------------------------------------------------------------------------------------------------------------------
-# 设置wifi加密方式为psk2+ccmp,wifi密码为12345678
-sed -i 's/encryption=none/encryption=psk2+ccmp/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wireless.default_radio${devidx}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# 设置wan口上网方式为PPPOE
+# sed -i 's/2:-dhcp/2:-pppoe/g' package/base-files/files/lib/functions/uci-defaults.sh
+# 设置PPPOE上网的账号和密码
+# sed -i 's/username='"'"'username'"'"'/username='"'"'403'"'"'/g; s/password='"'"'password'"'"'/password='"'"'8888'"'"'/g' package/base-files/files/bin/config_generate
 
 # 30----------------------------------------------------------------------------------------------------------------------------------
 # 设置无线的国家代码为CN,wifi的默认功率为20
@@ -185,10 +186,9 @@ sed -i 's/country=US/country=CN/g' package/kernel/mac80211/files/lib/wifi/mac802
 sed -i '/set wireless.radio${devidx}.disabled=0/a\\t\t\tset wireless.radio${devidx}.txpower=20' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 31----------------------------------------------------------------------------------------------------------------------------------
-# 设置wan口上网方式为PPPOE
-# sed -i 's/2:-dhcp/2:-pppoe/g' package/base-files/files/lib/functions/uci-defaults.sh
-# 设置PPPOE上网的账号和密码
-# sed -i 's/username='"'"'username'"'"'/username='"'"'403'"'"'/g; s/password='"'"'password'"'"'/password='"'"'8888'"'"'/g' package/base-files/files/bin/config_generate
+# 设置wifi加密方式为psk2+ccmp,wifi密码为12345678
+sed -i 's/encryption=none/encryption=psk2+ccmp/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wireless.default_radio${devidx}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 32----------------------------------------------------------------------------------------------------------------------------------
 # 设置默认开启MU-MIMO
