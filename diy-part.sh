@@ -12,9 +12,9 @@ sed -i 's/OpenWrt/OpenWrt-RK/g' package/base-files/files/bin/config_generate
 
 # 1----------------------------------------------------------------------------------------------------------------------------------
 # 修改默认IP
-# Modify default IP（修改wan口IP）
+# 新版LUCI的ip修改wan口IP
 # sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
-# 新版LUCI的ip修改地址
+# 新版LUCI的ip修改lan口IP
 sed -i 's/192.168.1.1/192.168.10.1/g' ./package/base-files/luci2/bin/config_generate
 
 # 2----------------------------------------------------------------------------------------------------------------------------------
