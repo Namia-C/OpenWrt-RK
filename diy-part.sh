@@ -8,7 +8,7 @@
 # 修改主机名字，把 OpenWrt-RK 修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/OpenWrt-RK/g' package/base-files/files/bin/config_generate
 # 修改系统内核
-sed -i 's/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.12/g' target/linux/rockchip/Makefile
+# sed -i 's/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.1/g' target/linux/rockchip/Makefile
 
 # 1----------------------------------------------------------------------------------------------------------------------------------
 # 修改默认IP
