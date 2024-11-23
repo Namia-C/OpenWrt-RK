@@ -22,7 +22,7 @@ sed -i 's/192.168.1.1/192.168.10.1/g' ./package/base-files/luci2/bin/config_gene
 
 # 3----------------------------------------------------------------------------------------------------------------------------------
 # 更改 ttyd 顺序-名称-无密码登录
-# sed -i '3a \		"order": 10,' feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
+sed -i '3a \		"order": 10,' feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
 sed -i 's/\"终端\"/\"TTYD 终端\"/g' feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
