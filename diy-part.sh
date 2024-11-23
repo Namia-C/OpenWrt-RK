@@ -50,11 +50,6 @@ function git_sparse_clone() {
 # 添加额外插件
 git clone --depth=1 https://github.com/Namia-R/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
-git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
-# 插件包使用方法
-# git clone --depth=1 https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
-# luci-app-poweroff关机插件
-# git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 
 # 8---------------------------------------------------------------------------------------------------------------------------------
 # 科学上网插件
