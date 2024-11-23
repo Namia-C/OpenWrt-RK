@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/github/forks/Namia-R/OpenWrt-RK.svg?style=for-the-badge&color=ff69b4"/>
 <img src="https://img.shields.io/github/license/Namia-R/OpenWrt-RK.svg?style=for-the-badge&color=blueviolet"/>
 
-## 项目说明 [![](https://img.shields.io/badge/-项目基本介绍-FFFFFF.svg)](#项目说明-)
+- ## 项目说明 [![](https://img.shields.io/badge/-项目基本介绍-FFFFFF.svg)](#项目说明-)
 - 项目使用 Github Actions 拉取Openwrt的源码 [![Lean](https://img.shields.io/badge/Lede-OpenWrt-ff69b4.svg?style=flat&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
 - 固件默认管理地址：`192.168.10.1` 默认用户：`root`,Rockchip密码`【空】`
 - 提供适配Rockchip-photonicat 以及 X86 平台设备的 OpenWrt 固件
