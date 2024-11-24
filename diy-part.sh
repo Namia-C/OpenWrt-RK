@@ -10,6 +10,7 @@
 # 1----------------------------------------------------------------------------------------------------------------------------------
 # 修改主机名字，把 OpenWrt-RK 修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/OpenWrt-RK/g' package/base-files/files/bin/config_generate
+sed -i "s/'OpenWrt'/'N1'/g" package/base-files/files/bin/config_generate    
 # 修改系统内核
 # sed -i 's/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.1/g' target/linux/rockchip/Makefile
 
@@ -21,9 +22,7 @@ sed -i 's/OpenWrt/OpenWrt-RK/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168.1.1/192.168.10.1/g' ./package/base-files/luci2/bin/config_generate
 
 # 3----------------------------------------------------------------------------------------------------------------------------------
-# 更改 ttyd 顺序-名称-无密码登录
-sed -i '3a \		"order": 10,' feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
-sed -i 's/\"终端\"/\"TTYD 终端\"/g' feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
+# 更改无密码登录
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 # 5----------------------------------------------------------------------------------------------------------------------------------
@@ -176,6 +175,34 @@ sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wi
 # 30----------------------------------------------------------------------------------------------------------------------------------
 # 设置默认开启MU-MIMO
 # sed -i '/set wireless.radio${devidx}.disabled=0/a\\t\t\tset wireless.radio${devidx}.mu_beamformer=1' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+# 31----------------------------------------------------------------------------------------------------------------------------------
+# 调整菜单路径
+sed -i 's|/services/|/system/|' feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
+sed -i 's|/services/|/nas/|' feeds/luci/applications/luci-app-alist/root/usr/share/luci/menu.d/luci-app-alist.json
+sed -i 's|/services/|/nas/|' feeds/luci/applications/luci-app-samba4/root/usr/share/luci/menu.d/luci-app-samba4.json
+sed -i 's|/services/|/network/|' feeds/luci/applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json
+sed -i 's|/services/|/network/|' feeds/luci/applications/luci-app-upnp/root/usr/share/luci/menu.d/luci-app-upnp.json
+
+# 32----------------------------------------------------------------------------------------------------------------------------------
+# 优先级
+sed -i 's/("Pass Wall"), -1)/("Pass Wall"), -9)/g' feeds/luci/applications/luci-app-passwall/luasrc/controller/passwall.lua
+sed -i 's/("PassWall 2"), 0)/("PassWall 2"), -8)/g' feeds/luci/applications/luci-app-passwall2/luasrc/controller/passwall2.lua
+sed -i 's/("OpenClash"), 50)/("OpenClash"), -10)/g' package/waynesg/luci-app-openclash/luci-app-openclash/luasrc/controller/openclash.lua
+
+# 33----------------------------------------------------------------------------------------------------------------------------------
+# 重命名系统菜单
+sed -i 's/"概览"/"系统概览"/g' feeds/luci/modules/luci-base/po/zh_Hans/base.po
+sed -i 's/"备份与升级"/"备份升级"/g' feeds/luci/modules/luci-base/po/zh_Hans/base.po
+sed -i 's/"路由"/"路由映射"/g' feeds/luci/modules/luci-base/po/zh_Hans/base.po
+sed -i 's/"管理权"/"权限管理"/g' feeds/luci/modules/luci-base/po/zh_Hans/base.po
+sed -i 's/"重启"/"立即重启"/g' feeds/luci/modules/luci-base/po/zh_Hans/base.po
+# sed -i 's/"挂载点"/"挂载路径"/g' feeds/luci/modules/luci-base/po/zh_Hans/base.po
+sed -i 's/"启动项"/"启动管理"/g' feeds/luci/modules/luci-base/po/zh_Hans/base.po
+sed -i 's/"软件包"/"软件管理"/g' $(grep "软件包" -rl ./)
+sed -i 's/"终端"/"TTYD 终端"/g' feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
+sed -i 's/"在线用户"/"在线设备"/g' package/waynesg/luci-app-onliner/luasrc/controller/onliner.lua
+sed -i 's/"AList"/"Alist列表"/g' feeds/luci/applications/luci-app-alist/root/usr/share/luci/menu.d/luci-app-alist.json
 
 # 结束✔️----------------------------------------------------------------------------------------------------------------------------------
 ./scripts/feeds update -a
