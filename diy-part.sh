@@ -50,7 +50,6 @@ function git_sparse_clone() {
 # 7----------------------------------------------------------------------------------------------------------------------------------
 # 添加额外插件
 git clone --depth=1 https://github.com/Namia-R/luci-app-adguardhome package/luci-app-adguardhome
-git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 
 # 8---------------------------------------------------------------------------------------------------------------------------------
 # 科学上网插件
