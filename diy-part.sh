@@ -188,7 +188,6 @@ sed -i 's|/services/|/network/|' feeds/luci/applications/luci-app-upnp/root/usr/
 # 优先级
 sed -i 's/("Pass Wall"), -1)/("Pass Wall"), -9)/g' feeds/luci/applications/luci-app-passwall/luasrc/controller/passwall.lua
 sed -i 's/("PassWall 2"), 0)/("PassWall 2"), -8)/g' feeds/luci/applications/luci-app-passwall2/luasrc/controller/passwall2.lua
-sed -i 's/("OpenClash"), 50)/("OpenClash"), -10)/g' package/waynesg/luci-app-openclash/luci-app-openclash/luasrc/controller/openclash.lua
 
 # 33----------------------------------------------------------------------------------------------------------------------------------
 # 重命名系统菜单
@@ -201,7 +200,6 @@ sed -i 's/"重启"/"立即重启"/g' feeds/luci/modules/luci-base/po/zh_Hans/bas
 sed -i 's/"启动项"/"启动管理"/g' feeds/luci/modules/luci-base/po/zh_Hans/base.po
 sed -i 's/"软件包"/"软件管理"/g' $(grep "软件包" -rl ./)
 sed -i 's/"终端"/"TTYD 终端"/g' feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
-sed -i 's/"在线用户"/"在线设备"/g' package/waynesg/luci-app-onliner/luasrc/controller/onliner.lua
 # sed -i 's/"AList"/"Alist列表"/g' feeds/luci/applications/luci-app-alist/root/usr/share/luci/menu.d/luci-app-alist.json
 
 # 结束✔️----------------------------------------------------------------------------------------------------------------------------------
