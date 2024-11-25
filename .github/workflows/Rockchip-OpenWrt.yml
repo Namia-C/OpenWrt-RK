@@ -13,7 +13,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: configs/model.Drive
+#  CONFIG_FILE: configs/model.Drive
   EXTRA_CONFIG: configs/rockchip.config
   DIY_SCRIPT: diy-part.sh
   CLASH_KERNEL: arm64
