@@ -57,7 +57,11 @@ CONFIG_TARGET_rockchip_armv8_DEVICE_ariaboard_photonicat=y
 # CONFIG_TARGET_rockchip_armv8_DEVICE_widora_mangopi-m28k is not set
 # CONFIG_TARGET_rockchip_armv8_DEVICE_widora_mangopi-m28k-pro is not set
 
+
+## 这是自己添加的
+CONFIG_PACKAGE_kmod-rtw88=y
 ## 你如果不懂以下驱动别动
+
 
 # Image Builder
 CONFIG_IB=y
