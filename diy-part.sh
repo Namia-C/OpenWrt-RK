@@ -80,7 +80,7 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 # 随身路由AT工具和拨号调制器
 # git clone --depth=1 https://github.com/ouyangzq/sendat package/sendat
 # git clone --depth=1 https://github.com/ouyangzq/luci-app-cpe package/luci-app-cpe
-git_sparse_clone main https://github.com/Siriling/5G-Modem-Support luci-app-modem sendat luci-app-cpe  sms-tool
+git_sparse_clone main https://github.com/Siriling/5G-Modem-Support luci-app-modem sendat luci-app-cpe  sms-tool luci-app-hypermodem
 # git_sparse_clone main https://github.com/Namia-R1/5G-Modem-Support 5G-Modem-Support
 # git_sparse_clone main https://github.com/kenzok8/jell luci-app-modemband sms-tool modemband
 
