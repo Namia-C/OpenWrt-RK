@@ -82,6 +82,7 @@ git clone --depth=1 https://github.com/ouyangzq/sendat package/sendat
 git clone --depth=1 https://github.com/ouyangzq/luci-app-cpe package/luci-app-cpe
 # git_sparse_clone main https://github.com/Namia-R1/5G-Modem-Support luci-app-modem sendat sms-tool luci-app-hypermodem
 git_sparse_clone main https://github.com/kenzok8/jell luci-app-modemband sms-tool modemband
+git clone --depth=1 https://github.com/obsy/sms_tool package/sms_tool sms_tool
 
 
 # 12----------------------------------------------------------------------------------------------------------------------------------
